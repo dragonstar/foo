@@ -4,7 +4,7 @@ require "subscribem/testing_support/authentication_helpers"
 
 feature "Accounts" do
   include Subscribem::TestingSupport::AuthenticationHelpers
-  let(:account) { FactoryGirl.create(:account_with_schema) }
+  let(:account) { FactoryGirl.create(:account) }
   let(:root_url) {"http://#{account.subdomain}.example.com/"}
 
   context "as the account owner" do
