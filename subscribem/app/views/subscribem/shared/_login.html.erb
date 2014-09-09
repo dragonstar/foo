@@ -1,5 +1,9 @@
 <% if user_signed_in? %>
   Signed in as <%= current_user.email %>
-<% else %>
-  <%= link_to 'Sign in', subscribem.sign_in_path %>
+
+  <% if owner? %>
+     &middot;
+     <%= link_to "Edit Account", subscribem.edit_account_path %>
+  <% end %>
 <% end %>
+<%= link_to 'Sign in', subscribem.sign_in_path %>

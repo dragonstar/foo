@@ -27,7 +27,10 @@ module Subscribem
          account.users << account.owner
       end
       account
+    end
 
+    def owner?(user)
+      owner == user
     end
 
   end

@@ -7,7 +7,7 @@ feature 'User sign in' do
 
   let!(:account) {FactoryGirl.create(:account)}
   let!(:sign_in_url) { "http://#{account.subdomain}.example.com/sign_in"}
-  let!(:root_url) {"http://#{account.subdomain}.example.com"}
+  let!(:root_url) {"http://#{account.subdomain}.example.com/"}
 
   within_account_subdomain do
     scenario "Signs in as an account holder successfully" do

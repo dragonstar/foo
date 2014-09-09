@@ -16,6 +16,7 @@ feature 'User sign in' do
     scenario "Signs in as an account holder successfully" do
       #puts account
       visit root_url
+      expect(page).to have_content("Sign in")
       click_link 'Sign in'
       fill_in "Email", with: account.owner.email
       fill_in "Password", with: "password"

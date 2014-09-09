@@ -17,6 +17,7 @@ require 'factory_girl'
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f}
 
 
+
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!

@@ -34,4 +34,9 @@
     env["warden"].set_user(user, scope: :user)
   end
 
+  def owner?
+    current_account.owner?(current_user)
+  end
+  helper_method :owner?
+
 end

@@ -19,10 +19,13 @@
 #require "support/authentication_helpers.rb"
 require "database_cleaner"
 
+
+
 RSpec.configure do |config|
   #config.after(:each) do
    # Apartment::Database.reset
   #end
+  #config.include FactoryGirl::Syntax::Methods
 
   config.before(:all) do
     DatabaseCleaner.strategy = :truncation,
