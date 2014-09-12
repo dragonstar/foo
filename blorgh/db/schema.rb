@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827215139) do
+ActiveRecord::Schema.define(version: 20140912064913) do
 
   create_table "comments", force: true do |t|
     t.string   "username"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140827215139) do
     t.datetime "updated_at"
     t.integer  "owner_id"
     t.string   "subdomain"
+    t.integer  "plan_id"
   end
 
   add_index "subscribem_accounts", ["subdomain"], name: "index_subscribem_accounts_on_subdomain"

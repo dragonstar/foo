@@ -1,6 +1,7 @@
 module Subscribem
   class Account < ActiveRecord::Base
     validates :subdomain, :presence => true, :uniqueness => true
+    validates :name, :presence => true
 
     EXCLUDED_SUBDOMAINS = %w(admin)
     validates_exclusion_of :subdomain, :in => EXCLUDED_SUBDOMAINS, :message => "is not allowed.  Please choose another subdomain."
@@ -8,6 +9,7 @@ module Subscribem
 
 
     belongs_to :owner, :class_name => "Subscribem::User"
+    belongs_to :plan, :class_name => "Subscribem::Plan"
     accepts_nested_attributes_for :owner
     has_many :members, :class_name => "Subscribem::Member"
     has_many :users, :through => :members
@@ -32,6 +34,8 @@ module Subscribem
     def owner?(user)
       owner == user
     end
+
+
 
   end
 end
