@@ -9,6 +9,7 @@ module Subscribem
     require "houser"
     require "braintree"
 
+
     initializer "subscribem.middleware.warden" do
       Rails.application.config.middleware.use Warden::Manager do |manager|
         manager.default_strategies :password
@@ -19,6 +20,15 @@ module Subscribem
           Subscribem::User.find(id)
 
         end
+      end
+    end
+
+    initializer "subscribem.middleware.fake_braintree_redirect" do
+      if Rails.env.test?
+        require "fake_braintree_redirect"
+        Rails.application.config.middleware.insert_before \
+          Warden::Manager,
+          FakeBraintreeRedirect
       end
     end
 
@@ -43,6 +53,7 @@ module Subscribem
 
       end
     end
+
 
 
   end

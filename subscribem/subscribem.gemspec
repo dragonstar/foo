@@ -23,12 +23,16 @@ Gem::Specification.new do |s|
   s.add_dependency 'pg'
   #s.add_dependency "apartment", "0.24.3"
   s.add_dependency 'houser', "1.0.2"
-  s.add_dependency 'braintree', "2.24.0"
+  #s.add_dependency 'braintree', "2.24.0"
+  s.add_dependency 'braintree', "2.33.1"
+  #s.add_dependency "fake_braintree_redirect", :github => "radar/fake_braintree_redirect"
+
 
   s.add_development_dependency 'rspec-rails', '3.0.1'
   s.add_development_dependency 'capybara', '2.3.0'
   s.add_development_dependency 'factory_girl', '4.4.0'
   s.add_development_dependency "database_cleaner", "1.3.0"
-
+  #s.add_development_dependency "fake_braintree_redirect"
+  #s.add_development_dependency "fake_braintree_redirect", :git => 'git://github.com/radar/fake_braintree_redirect.git'
 
 end

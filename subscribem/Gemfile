@@ -12,3 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+#gem "fake_braintree_redirect", :github => "radar/fake_braintree_redirect"
+gem "fake_braintree_redirect", :git => 'git://github.com/radar/fake_braintree_redirect.git'

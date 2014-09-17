@@ -1,6 +1,6 @@
 module Subscribem
   class ApplicationController < ::ApplicationController
-
+    protect_from_forgery with: :null_session
 
     def authorize_owner
       unless owner?

@@ -26,6 +26,6 @@ group :development, :test do
   gem 'rspec-rails', '3.0.1'
   gem 'capybara', "2.3.0"
   gem 'factory_girl', '4.4.0'
-  
+  gem "fake_braintree_redirect", :git => 'git://github.com/radar/fake_braintree_redirect.git'
 
 end
